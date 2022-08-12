@@ -9,6 +9,7 @@ import fs from 'fs';
 import fetch from 'node-fetch';
 import {exec} from 'child_process';
 import Compiler from './Compiler.js';
+import { stdout } from 'process';
 
 async function main() {
     figlet('RITCHIE', function(err, data) {
@@ -78,8 +79,12 @@ fs.writeFileSync(`${output}.asm`, program3, {
         outputName = outputName[0]
     }
 
-    exec(`nasm -f elf ./${output}.asm`)
-    exec(`ld -m elf_i386 -s -o ${output} ${output}.o`)
+    exec(`nasm -f elf ./${output}.asm`, (err, stdout, stderr) => {
+        console.log(stdout)
+    })
+    exec(`ld -m elf_i386 -s -o ${output} ${output}.o`, (err, stdout, stderr) => {
+        console.log(stdout)
+    })
 }
 
 main()

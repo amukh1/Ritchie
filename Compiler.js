@@ -1,9 +1,44 @@
+import fs from 'fs';
+import libs from './standard_libs.js';
+
 class Compiler {
     constructor(output) {
         this.output = output
     }
     compile(code) {
-var program = code
+let program = code
+
+var standard_libraries = ['Stdio']
+// console.log(libs['Stdio'])
+// console.log(program.match(/import (.*?)\n/g))
+program = program.replace(/import (.*?)\n/g, (match, p1) => {
+            let lib = libs[p1]
+            // let lib = fs.readFileSync(`./standard_imports/x32/${p1}.asm`, 'utf-8')
+            // console.log(lib)
+            return lib
+    })
+
+    // console.log(code.match(/import (.*?)\n/g))
+
+// get all import statements (import to new line)
+// import regex = /import (.*?)\n/g
+
+// function check_imports(){
+//     // console.log('checking')
+//     if(program.includes('import')){
+// program = program.replace(/import (.*?)\n/g, (match, p1) => {
+//     // console.log(match)
+//     if(standard_libraries.includes(match.split(' ')[1])) {
+//         let lib = fs.readFileSync(`./standard_imports/x32/${match.split(' ')[1]}.rit`, 'utf-8')
+//         console.log(lib)
+//         return lib
+//     }
+// })}
+// if(program.includes('import')){
+//     check_imports()
+// }};
+// check_imports()
+// program = 'e'
 
 // compile to x86 assembly
 
@@ -20,9 +55,6 @@ program = program.replace(/\/\/(.*?)\n/g, '')
 // just in case
 program = program.split('//').join(';')
 // program = this.clearComments(code)
-
-// get all import statements (import to new line)
-// import regex = /import (.*?)\n/g
 
 // (on hold) function name + params, regex: = /function (.*?){/g
 
@@ -69,7 +101,7 @@ program = program.replace(/function (.*?){/g, (func, index, original) => {
 
 program = program.replace('SYS::EXIT', (func, index, origin) => {
     return `mov	eax, 1
-    int	0x80`
+int	0x80`
 })
 
 

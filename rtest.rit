@@ -1,17 +1,11 @@
+import Stdio
+
 function _start() {
 mov	edx, len  
 mov	ecx, msg
 println(ecx, edx)
+println(ecx, edx)
 SYS::EXIT
-}
-
-function println() {
-pop edx
-pop ecx
-mov	ebx, 1	   
-mov	eax, 4	 
-int	0x80        
-ret
 }
 
 SYS::DATA
