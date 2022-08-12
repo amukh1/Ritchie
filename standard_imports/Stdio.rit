@@ -1,0 +1,9 @@
+function println() {
+    pop edx
+    pop ecx
+	mov	ebx, 1	    //file descriptor 
+	mov	eax, 4	    //system call number 
+	int	0x80        //call kernel
+    ret
+}
+
