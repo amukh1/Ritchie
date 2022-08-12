@@ -61,33 +61,7 @@ ASM compiles to bytecode automatically on Linux (if your on Windows/OSX use an o
 <br>
 
 ```
-function _start() {
-mov	edx, len  
-mov	ecx, msg
-println(ecx, edx)
-SYS::EXIT
-}
-
-function println() {
-pop edx
-pop ecx
-mov	ebx, 1	   
-mov	eax, 4	 
-int	0x80        
-ret
-}
-
-SYS::DATA
-msg db "Hello world!",0xa
-len	equ	$ - msg
-```
-It accepts assembly (Working to add features so you wouldnt need to use assembly)
-<br>
-That last program is soon to be:
-
-```
 import Stdio
-import Sys
 
 function _start() {
 mov	edx, len  
@@ -99,7 +73,22 @@ SYS::EXIT
 SYS::DATA
 msg db "Hello world!",0xa
 len	equ	$ - msg
+
 ```
+Assembly can be embedded directly into the language (Working to add features so you wouldnt need to use assembly)
+<br>
+
+### SYS::EXIT
+**Exits program**
+
+### SYS::DATA
+**Data section of the program, where you define variables, working on those too, soon to be "var name = db "value"**
+
+### Functions
+**Functions only take registers are parameters**
+
+### Imports
+**Only I can make imports (working on a better solution later)**
 
 ## Contributing
 
