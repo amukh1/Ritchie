@@ -123,4 +123,4 @@ See also the list of [contributors](https://github.com/amukh1/Ritchie/contributo
 
 ## License
 
-[MIT License](https://andreasonny.mit-license.org/20122) © Amukh1
+[MIT License](https://andreasonny.mit-license.org/2022) © Amukh1
