@@ -1,6 +1,6 @@
 {
   "name": "ritchie",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Small compiled programming language similar to C",
   "main": "index.js",
   "type": "module",
