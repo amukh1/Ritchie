@@ -1,6 +1,6 @@
 [![npm version](https://badge.fury.io/js/Ritchie.svg)](https://www.npmjs.com/package/Ritchie)
 
-# August-lang
+# Ritchie
 
 > A small *compiled* **programming language** similar to *C*.
 
