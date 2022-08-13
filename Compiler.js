@@ -12,8 +12,8 @@ var standard_libraries = ['Stdio']
 // console.log(libs['Stdio'])
 // console.log(program.match(/import (.*?)\n/g))
 program = program.replace(/import (.*?)\n/g, (match, p1) => {
-            // let lib = libs[p1]
-            let lib = fs.readFileSync(`./standard_imports/x32/${p1}.rit`, 'utf-8')
+            let lib = libs[p1]
+            // let lib = fs.readFileSync(`./standard_imports/x32/${p1}.rit`, 'utf-8')
             // console.log(lib)
             return lib
     })
