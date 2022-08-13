@@ -84,8 +84,6 @@ len	equ	$ - msg
 ```
 ## Wanna learn more? check out the docs: [Visit docs](https://ritchie.js.org/docs)
 
-<br>
-
 <!-- <style>
 .docs {
     transition: all 0.5s ease;
