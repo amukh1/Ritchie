@@ -83,8 +83,8 @@ program = program.replace(/(.*?)\((.*?)\)/g, (func, index, original) => {
         let x = ``
 if(funcParams[0] != ''){
         funcParams.forEach(param => {
-            x = x + `mov eax, ${param.split(' ').join('')}`
-            x = x + `\npush eax`
+            x = x + `mov eax, ${param.split(' ').join('')}\n`
+            x = x + `push eax`
         });
     }
         x = x + `\ncall ${funcName}`
