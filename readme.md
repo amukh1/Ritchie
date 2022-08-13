@@ -84,6 +84,8 @@ len	equ	$ - msg
 ```
 ## Wanna learn more? check out the docs: [Docs](https://ritchie.js.org/docs)
 
+<button class="button big" type="submit" onClick="()=>{alert('hello')}">Visit Docs</button>
+
 <br>
 
 ## Contributing
