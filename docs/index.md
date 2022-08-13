@@ -56,7 +56,7 @@ name(p1, p2, p3)
 # Imports
 **Only I can make imports (working on a better solution later)**
 
-## Stdio:
+## *Stdio:*
 ```
 import Stdio // imports println() and input()
 
@@ -65,7 +65,7 @@ println($reg1, $reg2) // msg, msgLength
 input($reg1) // Output register pointer
 ```
 
-## Stdlib:
+## *Stdlib:*
 ```
 import Stdlib // imports Sys aliases and ifEqu()
 
