@@ -3,7 +3,6 @@
 [Web Compiler](https://www.jdoodle.com/compile-assembler-nasm-online/)
 
 ## Example program (for refrence):
-<br>
 
 ```
 import Stdio
@@ -21,15 +20,21 @@ len	equ	$ - msg
 
 ```
 Assembly can be embedded directly into the language (Working to add features so you wouldnt need to use assembly)
+
+<br>
 <br>
 
 # SYS::EXIT
 **Exits program**
 
+<br>
+
 # SYS::DATA
 **Data section of the program, where you define variables, working on those too, soon to be "var name = db "value"**
 
 **Constants are defined with "equ"**
+
+<br>
 
 # Functions
 **Functions only take registers are parameters**
@@ -52,6 +57,8 @@ push $reg4
 ```
 name(p1, p2, p3)
 ```
+
+<br>
 
 # Imports
 **Only I can make imports (working on a better solution later)**
