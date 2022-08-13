@@ -12,9 +12,12 @@ import Compiler from './Compiler.js';
 import { stdout } from 'process';
 
 async function main() {
+    if(process.argv[3] != 'fast'){
     figlet('RITCHIE', function(err, data) {
 console.log(gradient.pastel.multiline(data))
-    });
+    })}else {
+        console.log(chalk.yellow('Ritchie: Fast mode'))
+    }
 
     setTimeout(() => {
         console.clear();
