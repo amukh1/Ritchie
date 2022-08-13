@@ -44,6 +44,13 @@ Or if you prefer using Yarn:
 $ yarn add --dev ritchie
 ```
 
+## There is also a vscode extension:
+**[Extension Link](https://marketplace.visualstudio.com/items?itemName=amukh1.ritchie)**
+
+**Or  just search up "Ritchie" in the extensions section**
+
+![img](./rvsco.png)
+
 ## Usage
 
 august-lang takes 2 file extentions, .aug and .asm.
