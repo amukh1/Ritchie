@@ -75,20 +75,9 @@ msg db "Hello world!",0xa
 len	equ	$ - msg
 
 ```
-Assembly can be embedded directly into the language (Working to add features so you wouldnt need to use assembly)
+## Wanna learn more? check out the docs: [Docs](https://ritchie.js.org/docs)
+
 <br>
-
-### SYS::EXIT
-**Exits program**
-
-### SYS::DATA
-**Data section of the program, where you define variables, working on those too, soon to be "var name = db "value"**
-
-### Functions
-**Functions only take registers are parameters**
-
-### Imports
-**Only I can make imports (working on a better solution later)**
 
 ## Contributing
 
