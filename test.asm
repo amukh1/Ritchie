@@ -1,9 +1,13 @@
 section	.text
         global _start
-import Stdio_start:mov	edx, len  mov	ecx, msgpush ecx
-push edx
-call printlnpush ecx
-push edx
+import Stdio_start:mov eax, msg
+push eax
+mov eax, len
+push eax
+call printlnmov eax, msg
+push eax
+mov eax, len
+push eax
 call printlnmov	eax, 1
 int	0x80
 section .data

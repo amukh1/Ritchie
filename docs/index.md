@@ -43,9 +43,9 @@ Assembly can be embedded directly into the language (Working to add features so 
 ```
 function name(p1, p2, p3) {
 pop $reg1 // return line
-pop $reg2 // param 1
+pop $reg2 // param 3
 pop $reg3 // param 2
-pop $reg4 // param 3
+pop $reg4 // param 1
 
 // run code
 

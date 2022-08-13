@@ -1,10 +1,8 @@
 import Stdio
 
 function _start(a, b, c) {
-mov	edx, len  
-mov	ecx, msg
-println(ecx, edx)
-println(ecx, edx)
+println(msg, len)
+println(msg, len)
 SYS::EXIT
 }
 

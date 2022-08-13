@@ -28,8 +28,8 @@ STDOUT    equ 1
 
 function ifEqu(){
     pop eax // return line
-    pop ebx // param 1 - condition
-    pop ecx // param 2 - function to execute if condition is true
+    pop ebx // param 2 - condition
+    pop ecx // param 1 - function to execute if condition is true
     // code
     push edx // return response
     push eax // return line
