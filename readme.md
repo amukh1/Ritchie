@@ -44,6 +44,13 @@ Or if you prefer using Yarn:
 $ yarn add --dev ritchie
 ```
 
+## There is also a vscode extension:
+**[Extension Link](https://marketplace.visualstudio.com/items?itemName=amukh1.ritchie)**
+
+**Or  just search up "Ritchie" in the extensions section**
+
+![img](./rvsco.png)
+
 ## Usage
 
 august-lang takes 2 file extentions, .aug and .asm.
@@ -55,7 +62,7 @@ rcomp is the compiler.. (*R*itchie *Comp*iler) and putting in an .rit file compi
 $ rcomp ./file.rit name
 ```
 ASM compiles to bytecode automatically on Linux (if your on Windows/OSX use an online compiler).
-[webCompiler](https://www.jdoodle.com/compile-assembler-nasm-online/)
+[Web Compiler](https://www.jdoodle.com/compile-assembler-nasm-online/)
 
 ## Example program:
 <br>
@@ -75,20 +82,40 @@ msg db "Hello world!",0xa
 len	equ	$ - msg
 
 ```
-Assembly can be embedded directly into the language (Working to add features so you wouldnt need to use assembly)
+## Wanna learn more? check out the docs: [Visit docs](https://ritchie.js.org/docs)
+
+<!-- <style>
+.docs {
+    transition: all 0.5s ease;
+    position: relative;
+    top: 0px;
+    background-color:#0f38f0; 
+    border-radius:25px; 
+    color: white; 
+    padding:25px;
+    border: none;
+}
+
+.docs:Hover {
+    top: -10px;
+    background-color: #0009a8;
+        /* color: white;  */
+}
+
+.a {
+      text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+</style> -->
+
+<!-- <button class="docs" href="/handbook/toc/" style="" onClick="()=>{alert('Missed the link?')}">
+<a class="a" href="https://ritchie.js.org/docs/">Visit Docs</a>
+</button> -->
+
+
 <br>
-
-### SYS::EXIT
-**Exits program**
-
-### SYS::DATA
-**Data section of the program, where you define variables, working on those too, soon to be "var name = db "value"**
-
-### Functions
-**Functions only take registers are parameters**
-
-### Imports
-**Only I can make imports (working on a better solution later)**
 
 ## Contributing
 
@@ -112,4 +139,4 @@ See also the list of [contributors](https://github.com/amukh1/Ritchie/contributo
 
 ## License
 
-[MIT License](https://andreasonny.mit-license.org/2022) © Amukh1
+[MIT License](https://mit-license.org/2022) © Amukh1
