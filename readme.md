@@ -84,7 +84,38 @@ len	equ	$ - msg
 ```
 ## Wanna learn more? check out the docs: [Docs](https://ritchie.js.org/docs)
 
-<button class="button big" type="submit" onClick="()=>{alert('hello')}">Visit Docs</button>
+<br>
+
+<style>
+.docs {
+    transition: all 0.5s ease;
+    position: relative;
+    top: 0px;
+    background-color:#0f38f0; 
+    border-radius:25px; 
+    color: white; 
+    padding:25px;
+    border: none;
+}
+
+.docs:Hover {
+    top: -10px;
+    background-color: #0009a8;
+        /* color: white;  */
+}
+
+.a {
+      text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+</style>
+
+<button class="docs" href="/handbook/toc/" style="" onClick="()=>{alert('Missed the link?')}">
+<a class="a" href="https://ritchie.js.org/docs/">Visit Docs</a>
+</button>
+
 
 <br>
 
