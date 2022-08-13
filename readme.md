@@ -82,11 +82,11 @@ msg db "Hello world!",0xa
 len	equ	$ - msg
 
 ```
-## Wanna learn more? check out the docs: [Docs](https://ritchie.js.org/docs)
+## Wanna learn more? check out the docs: [Visit docs](https://ritchie.js.org/docs)
 
 <br>
 
-<style>
+<!-- <style>
 .docs {
     transition: all 0.5s ease;
     position: relative;
@@ -110,11 +110,11 @@ len	equ	$ - msg
     font-size: 2rem;
 }
 
-</style>
+</style> -->
 
-<button class="docs" href="/handbook/toc/" style="" onClick="()=>{alert('Missed the link?')}">
+<!-- <button class="docs" href="/handbook/toc/" style="" onClick="()=>{alert('Missed the link?')}">
 <a class="a" href="https://ritchie.js.org/docs/">Visit Docs</a>
-</button>
+</button> -->
 
 
 <br>
