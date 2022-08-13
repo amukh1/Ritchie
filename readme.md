@@ -55,7 +55,7 @@ rcomp is the compiler.. (*R*itchie *Comp*iler) and putting in an .rit file compi
 $ rcomp ./file.rit name
 ```
 ASM compiles to bytecode automatically on Linux (if your on Windows/OSX use an online compiler).
-[webCompiler](https://www.jdoodle.com/compile-assembler-nasm-online/)
+[Web Compiler](https://www.jdoodle.com/compile-assembler-nasm-online/)
 
 ## Example program:
 <br>
