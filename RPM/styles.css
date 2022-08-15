@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+
+body {
+    font-family: 'Silkscreen', cursive;
+    /* margin: 0px;
+    padding:0px; */
+    /* background-color: rgb(85, 85, 251); */
+    overflow-y: hidden;
+    background-color: rgb(255, 255, 255);
+}
+
+.head {
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+font-size: 1.5rem;
+background-color: white;
+/* margin: 5px; */
+}
+
+.head-right{
+    /* margin-right: 10%; */
+}
+
+.head-left {
+    /* margin-left: 10%; */
+}
+
+.ht {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.package-search-input {
+    border: none;
+    width: 50%;
+    padding: 10px;
+    background-color: rgba(164, 179, 192, 0.421);
+    border-radius: 25px;
+}
+
+.package-search-input:focus {
+    border: none;
+}
+
+.blue {
+    color: rgb(85, 85, 251);
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+
+.footerr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.n {
+    margin-right: 15%;
+}
+
+.ho {
+    transition: all 0.5s ease;
+}
+
+.ho:hover {
+    color: rgb(85, 85, 251);
+}
+
+/* hr {
+     margin: 0px; 
+} */
+
+.body {
+    background-color: rgb(240,240,240);
+    margin: 0px;
+    width: 100%;
+    height: 90vh;
+}

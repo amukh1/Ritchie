@@ -11,12 +11,27 @@ let program = code
 var standard_libraries = ['Stdio']
 // console.log(libs['Stdio'])
 // console.log(program.match(/import (.*?)\n/g))
+
+function get_imports(){
 program = program.replace(/import (.*?)\n/g, (match, p1) => {
+
+    if(libs[p1]){
             let lib = libs[p1]
             // let lib = fs.readFileSync(`./standard_imports/x32/${p1}.rit`, 'utf-8')
             // console.log(lib)
             return lib
+    }else {
+        // external import :0 oh no
+        let lib = fs.readFileSync(p1, 'utf-8')
+        return lib
+    }
+
     })
+if(program.split(' ').includes('import')){
+    get_imports()
+}
+}
+get_imports()
 
     // console.log(code.match(/import (.*?)\n/g))
 

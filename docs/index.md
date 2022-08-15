@@ -61,15 +61,15 @@ name(p1, p2, p3)
 <br>
 
 # Imports
-**Only I can make imports (working on a better solution later)**
+**If import is not included in *my* standard imports, then it will look around for an external import file**
 
 ## *Stdio:*
 ```
 import Stdio // imports println() and input()
 
-println($reg1, $reg2) // msg, msgLength
+println(msg, msgLength)
 
-input($reg1) // Output register pointer
+input() // pushes output/response to stack
 ```
 
 ## *Stdlib:*
@@ -82,7 +82,25 @@ SYS_WRITE // 4
 STDIN     // 0
 STDOUT    // 1
 
-ifEqu($reg1, $reg2) // Condition, Output register pointer
+ifEqu(1, 2, function) // (Value, Value, function pointer) Does not call function
+ifEqu(1, 1, function) // calls function
+```
+## *External Import Files:*
+
+index.rit:
+```
+import external.rit // imports external .rit file (just takes contents of file, no "module.exports" or "require" statements)
+import external.asm // imports external .asm file (same as above^^)
+```
+
+external.rit:
+```
+// No import Stdio needed, because it was included in the index.rit file, just make sure you import Stdio before importing external.rit
+
+function external_function() {
+println("Hello World!")
+ret
+}
 ```
 
 <br>

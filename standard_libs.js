@@ -26,13 +26,21 @@ SYS_WRITE equ 4
 STDIN     equ 0
 STDOUT    equ 1
 
-function ifEqu(){
-    pop eax // return line
-    pop ebx // param 2 - condition
-    pop ecx // param 1 - function to execute if condition is true
-    // code
-    push edx // return response
-    push eax // return line
+%macro je_reg 1
+jne %%skip 
+call %1
+%%skip:
+%endmacro
+
+function ifEqu(a, b, c){
+pop ebp 
+pop ebx 
+pop ecx 
+pop edx 
+cmp edx, ecx 
+je_reg ebx
+push ebp
+ret
 }`,
 }
 
