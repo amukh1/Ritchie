@@ -19,13 +19,7 @@ background-color: white;
 /* margin: 5px; */
 }
 
-.head-right{
-    /* margin-right: 10%; */
-}
 
-.head-left {
-    /* margin-left: 10%; */
-}
 
 .ht {
     margin-left: 20px;
@@ -82,9 +76,6 @@ a {
      margin: 0px; 
 } */
 
-.body {
-
-}
 
 .mp {
     /* display: flex; */
