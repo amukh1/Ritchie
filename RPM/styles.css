@@ -83,8 +83,14 @@ a {
 } */
 
 .body {
-    background-color: rgb(240,240,240);
-    margin: 0px;
-    width: 100%;
-    height: 90vh;
+
+}
+
+.mp {
+    /* display: flex; */
+    text-align: center;
+    align-items: center; 
+    justify-content: center;
+    margin-top: 10px;
+    font-size: 1.5rem;
 }
