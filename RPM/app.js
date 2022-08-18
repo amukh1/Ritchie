@@ -17,7 +17,7 @@ fetch(`https://RPM.amukh1.repl.co/getTops`).then(res => res.json()).then(d => {
         let x = document.createElement("a");
         x.href = `https://ritchie.js.org/RPM/package#${package.Name}`;
         let y = document.createElement("div");
-        y.innerHTML = package.Name + ': ' + package.Downloads;
+        y.innerHTML = package.Name + ': ' + package.Downloads + ' downloads';
         y.classList.add("package");
         y.classList.add("ho");
         x.appendChild(y);
