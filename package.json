@@ -1,6 +1,6 @@
 {
   "name": "ritchie",
-  "version": "1.1.12",
+  "version": "1.1.13",
   "description": "Small compiled programming language similar to C",
   "main": "index.js",
   "type": "module",
@@ -10,9 +10,12 @@
   "author": "amukh1",
   "license": "ISC",
   "bin": {
-    "rcomp": "index.js"
+    "rcomp": "index.js",
+    "rpm": "rpm.js"
   },
   "dependencies": {
-    "fs": "^0.0.1-security"
+    "fs": "^0.0.1-security",
+    "node-localstorage": "^2.2.1",
+    "store": "^2.0.12"
   }
 }
