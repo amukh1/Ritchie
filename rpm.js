@@ -85,14 +85,7 @@ if(process.argv[2] == 'install'){
         }else {
             console.log('Publishing package under the name: ' + a.username)
             // fetch `https://RPM.amukh1.repl.co/newPackage?name=${packager.name}&author=${packager.author}` with body {}
-            let res = await fetch(`https://RPM.amukh1.repl.co/newPackage?name=${packager.name}&author=${packager.author}`, {
-                method: 'POST',
-                body: {
-                    croc: 'croc',
-                    files: sob()
-                }
-            })
-            
+            sob()
         }
     })
 
@@ -187,18 +180,24 @@ let sob = () => {
         } else {
             // files = an array with all the file NAMES
             files.forEach(file => {
-                console.log(file)
+                // console.log(file)
                 fs.readFile(`./${file}`, 'utf-8', (err, data) => {
                     if (err) {
                         console.log(err)
                     } else {
-                        console.log('alr')
+                        // console.log('alr')
                         // data = the file's contents
                         // console.log(data)
                         resp[file] = data
                         if(files.length == Object.keys(resp).length){
                             console.log(resp)
-                            return resp
+                            let res = await fetch(`https://RPM.amukh1.repl.co/newPackage?name=${packager.name}&author=${packager.author}`, {
+                method: 'POST',
+                body: JSON.stringify({
+                    croc: 'croc',
+                    files: resp
+                })
+            })
                         }
                     }
                 })
@@ -207,3 +206,5 @@ let sob = () => {
 
     });
 }
+
+// console.log(sob())
