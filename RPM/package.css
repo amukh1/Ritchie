@@ -31,6 +31,10 @@ body {
 display: flex;
 flex-direction: row;
 padding: 0px;
+position: relative;
+/* background-color: red; */
+justify-content: right;
+
 }
 
 .namee {
@@ -44,13 +48,16 @@ padding: 0px;
     align-items: center;
     justify-content: center;
     margin: 0px;
+    text-align: center;
 }
 
 .main {
     text-align: center;
     /* background-color: red; */
+    margin-right: 20px;
+    width: 100%;
 }
 
 .mark {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Roboto', cursive;
 }
