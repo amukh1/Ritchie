@@ -71,16 +71,11 @@ ASM compiles to bytecode automatically on Linux (if your on Windows/OSX use an o
 import Stdio
 
 function _start() {
-mov	edx, len  
-mov	ecx, msg
-println(ecx, edx)
+println("hi", 2)
 SYS::EXIT
 }
 
 SYS::DATA
-msg db "Hello world!",0xa
-len	equ	$ - msg
-
 ```
 ## Wanna learn more? check out the docs: [Visit docs](https://ritchie.js.org/docs)
 

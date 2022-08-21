@@ -8,16 +8,11 @@
 import Stdio
 
 function _start() {
-mov	edx, len  
-mov	ecx, msg
-println(ecx, edx)
+println("hi", 2)
 SYS::EXIT
 }
 
 SYS::DATA
-msg db "Hello world!",0xa
-len	equ	$ - msg
-
 ```
 Assembly can be embedded directly into the language (Working to add features so you wouldnt need to use assembly)
 
@@ -37,7 +32,6 @@ Assembly can be embedded directly into the language (Working to add features so 
 <br>
 
 # Functions
-**Functions only take registers are parameters**
 
 ## *Defining a function:*
 ```
@@ -49,7 +43,7 @@ pop $reg4 // param 1
 
 // run code
 
-push $reg4
+push $reg1 // return line
 }
 ```
 

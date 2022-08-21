@@ -17,16 +17,19 @@ var asms = []
 var bss = []
 var immds = []
 
+program = program.replace(/\/\/(.*?)\n/g, '')
+
+
 let totstrings = 0
-x = x.replace(/"(.*?)"/g, (match, p1) => {
+program = program.replace(/"(.*?)"/g, (match, p1) => {
     let y = `RITCHIE_IMMD_${totstrings}`
-    immds.push(`${y} db ${p1}`)
+    immds.push(`${y} db "${p1}"`)
     totstrings = totstrings+1
     return y
 })
 
 
-program = program.replace(/asm(.*?)asm/gms, (match, p1) => {
+program = program.replace(/ASM{(.*?)}ASM/gms, (match, p1) => {
     asms.push(p1)
     return `RITCHIE_ASM_ID`
 })
@@ -93,9 +96,6 @@ get_imports()
 
 // program = program.split(/\/\/(.*?)\n/g).join('')
 // program = program.split(/\/\/(.*?)?\/\//g).join('')
-
-program = program.replace(/\/\/(.*?)\n/g, '')
-
 // just in case
 program = program.split('//').join(';')
 // program = this.clearComments(code)
@@ -178,7 +178,8 @@ return `RITCHIE_IMMD_ID`
 */
 return `
 mov ebx, ${value}
-mov [${name}], ebx`
+mov [${name}], ebx
+`
 })
 
 program = program.replace(/section (.*?)\n/g, (varName, index, original) => {
@@ -218,7 +219,8 @@ program = program.replace(/RITCHIE_ASM_ID/g, (str, index, original) => {
 });
 
 return `section	.text
-        global _start\n` + program + `section .bss
+        global _start\n` + program + immds.join('\n')+`
+        section .bss
         ` + bss.join('\n')
 // }, 1000);
 
