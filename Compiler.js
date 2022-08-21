@@ -12,22 +12,51 @@ var standard_libraries = ['Stdio']
 // console.log(libs['Stdio'])
 // console.log(program.match(/import (.*?)\n/g))
 
+var strings = []
+var asms = []
+var bss = []
+var immds = []
+
+let totstrings = 0
+x = x.replace(/"(.*?)"/g, (match, p1) => {
+    let y = `RITCHIE_IMMD_${totstrings}`
+    immds.push(`${y} db ${p1}`)
+    totstrings = totstrings+1
+    return y
+})
+
+
+program = program.replace(/asm(.*?)asm/gms, (match, p1) => {
+    asms.push(p1)
+    return `RITCHIE_ASM_ID`
+})
+
+// replace all string with a unique identifier
+program = program.replace(/"(.*?)"/g, (match, p1) => {
+    strings.push(p1)
+    return `RITCHIE_STRING_ID`
+})
+
+var imports = []
 function get_imports(){
 program = program.replace(/import (.*?)\n/g, (match, p1) => {
-
-    if(libs[p1]){
+if(imports.includes(p1)){
+    return ''
+}else if(libs[p1]){
             let lib = libs[p1]
             // let lib = fs.readFileSync(`./standard_imports/x32/${p1}.rit`, 'utf-8')
             // console.log(lib)
+            imports.push(p1)
             return lib
     }else {
         // external import :0 oh no
         let lib = fs.readFileSync(p1, 'utf-8')
+        imports.push(p1)
         return lib
     }
 
     })
-if(program.split(' ').includes('import')){
+if((program.replace(/"(.*?)"/g,'')).split(' ').includes('import')){
     get_imports()
 }
 }
@@ -131,12 +160,25 @@ program = program.split('}').join('\n')
 // })
 
 // var to new line regex = /var (.*?);|var (.*?)\n/g
-program = program.replace(/var (.*?);|var (.*?)\n/g, (varName, index, original) => {
+program = program.replace(/var (.*?);|var (.*?)\n/g, (varName) => {
     // console.log(varName)
+let name = varName.split(' ')[2]
 let bytes = varName.split(' ')[1]
-let vn = varName.split(' ')[2]
-let data = varName.split(' ')[4]
-return `${vn} ${bytes} ${data}`
+let value = varName.split(' ')[4]
+// let data = varName.split(' ')[4]
+// return `${vn} ${bytes} ${data}`
+// return original
+bss.push(`${name} res${bytes} 0`)
+// let value2 = (value.match(/"(.*?)"/g)[0] == value) ? value:value
+/*
+()=>{
+newImmd()
+return `RITCHIE_IMMD_ID`
+}
+*/
+return `
+mov ebx, ${value}
+mov [${name}], ebx`
 })
 
 program = program.replace(/section (.*?)\n/g, (varName, index, original) => {
@@ -153,8 +195,31 @@ program = program.replace(/section (.*?)\n/g, (varName, index, original) => {
 // console.log(program)
 // setTimeout(() => {
     program = program + '\n'
+
+    let program2 = program.split('SYS::DATA')
+let data = program2[1]
+// program2[1] = ''
+let program3 = program2.join('section .data\n')
+
+program = program3
+
+program = program.replace(/RITCHIE_STRING_ID/g, (str, index, original) => {
+    // console.log(index)
+    let xxx = strings[0]
+    strings = strings.slice(1)
+    return xxx
+});
+
+program = program.replace(/RITCHIE_ASM_ID/g, (str, index, original) => {
+    // console.log(index)
+    let xxx = asms[0]
+    asms = asms.slice(1)
+    return xxx
+});
+
 return `section	.text
-        global _start\n` + program
+        global _start\n` + program + `section .bss
+        ` + bss.join('\n')
 // }, 1000);
 
     }

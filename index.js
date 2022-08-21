@@ -71,7 +71,9 @@ let data = program2[1]
 // program2[1] = ''
 let program3 = program2.join('section .data\n')
 
-fs.writeFileSync(`${output}.asm`, program3, {
+
+
+fs.writeFileSync(`${output}.asm`, program, {
     encoding: 'utf-8'
     })
 
