@@ -56,7 +56,7 @@ $ yarn add --dev ritchie
 august-lang takes 2 file extentions, .aug and .asm.
 <br>
 
-rcomp is the compiler.. (*R*itchie *Comp*iler) and putting in an .rit file compiles it to a .asm file.
+rcomp is the compiler.. (*R*itchie *Comp*iler) and putting in an .rit file compiles it to an asm file.
 
 ```sh
 $ rcomp ./file.rit name
