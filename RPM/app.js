@@ -1,6 +1,8 @@
 document.getElementById("search").addEventListener("keyup", event => {
     if(event.key !== "Enter") return; // Use `.key` instead.
     alert(`Searching for: ${document.getElementById('search').value}`) // Things you want to do.
+    // redirect
+    window.location.href = "https://ritchie.js.org/RPM/package#" + document.getElementById('search').value
     event.preventDefault(); // No need to `return false;`.
 });
 

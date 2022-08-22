@@ -8,7 +8,7 @@ class Compiler {
     compile(code) {
 let program = code
 
-var standard_libraries = ['Stdio']
+var standard_libraries = ['Stdio', 'Stdlib']
 // console.log(libs['Stdio'])
 // console.log(program.match(/import (.*?)\n/g))
 

@@ -74,8 +74,6 @@ function _start() {
 println("hi", 2)
 SYS::EXIT
 }
-
-SYS::DATA
 ```
 ## Wanna learn more? check out the docs: [Visit docs](https://ritchie.js.org/docs)
 

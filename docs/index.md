@@ -92,7 +92,7 @@ external.rit:
 // No import Stdio needed, because it was included in the index.rit file, just make sure you import Stdio before importing external.rit
 
 function external_function() {
-println("Hello World!")
+println("Hello World!", 12)
 ret
 }
 ```
