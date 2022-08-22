@@ -1,11 +1,12 @@
 import Stdio
 
 function _start(a, b, c) {
-println(msg, len)
-println(msg, len)
+mov ebx, 4
+var b y = "hii"
+var b x = "hi"
+println(x, 2)
+println(y, 3)
 SYS::EXIT
 }
 
 SYS::DATA
-msg db "Hello world!",0xa
-len	equ	$ - msg

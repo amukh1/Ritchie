@@ -16,6 +16,7 @@ var strings = []
 var asms = []
 var bss = []
 var immds = []
+var vars = []
 
 program = program.replace(/\/\/(.*?)\n/g, '')
 
@@ -169,6 +170,7 @@ let value = varName.split(' ')[4]
 // return `${vn} ${bytes} ${data}`
 // return original
 bss.push(`${name} res${bytes} 0`)
+vars.push(name)
 // let value2 = (value.match(/"(.*?)"/g)[0] == value) ? value:value
 /*
 ()=>{
@@ -178,7 +180,7 @@ return `RITCHIE_IMMD_ID`
 */
 return `
 mov ebx, ${value}
-mov [${name}], ebx
+mov ${name}, ebx\n
 `
 })
 
@@ -218,8 +220,24 @@ program = program.replace(/RITCHIE_ASM_ID/g, (str, index, original) => {
     return xxx
 });
 
+program = program.replace(new RegExp(vars.join('|'),'g'),(v, index)=>{
+    // console.log(v, index)
+    if((program[index - 1].match(/[A-Za-z]|[0-9]/g) == program[index -1]) || (program[index + 1].match(/[A-Za-z]|[0-9]/g) == program[index+1])){
+        return v
+    }else {
+        return `[${v}]`
+    }
+})
+
+let datasection = ''
+if(program.includes('section .data')){
+    datasection = ''
+}else {
+    datasection = 'section .data\n'
+}
+
 return `section	.text
-        global _start\n` + program + immds.join('\n')+`
+        global _start\n` + program + datasection+immds.join('\n')+`
         section .bss
         ` + bss.join('\n')
 // }, 1000);
