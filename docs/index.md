@@ -2,8 +2,7 @@
 
 ## [Web Compiler](https://www.jdoodle.com/compile-assembler-nasm-online/)
 
-## Example program (for refrence):
-
+## Example program (for reference)
 ```
 import Stdio
 
