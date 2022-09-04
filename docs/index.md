@@ -77,6 +77,8 @@ STDOUT    // 1
 
 ifEqu(1, 2, function) // (Value, Value, function pointer) Does not call function
 ifEqu(1, 1, function) // calls function
+
+strlen("string") // returns length of string (6, in this case)
 ```
 ## *External Import Files:*
 
@@ -94,6 +96,20 @@ function external_function() {
 println("Hello World!", 12)
 ret
 }
+```
+
+## *Variables:*
+
+declare variables with the "var" keyword
+
+var ${size} ${name} = ${value}
+
+b = byte
+
+```
+var b x = "hi"
+
+println([x], 2)
 ```
 
 <br>

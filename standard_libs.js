@@ -41,7 +41,18 @@ cmp edx, ecx
 je_reg ebx
 push ebp
 ret
-}`,
+}
+
+function strlen() {
+    push ebp
+    mov ebp, esp        ; setup the stack frame
+    mov ecx, [ebp+8]
+    xor eax, eax        ; loop counter
+    pop ebp
+    ret
+}
+
+`,
 }
 
 export default libs;

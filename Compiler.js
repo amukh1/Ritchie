@@ -180,7 +180,7 @@ return `RITCHIE_IMMD_ID`
 */
 return `
 mov ebx, ${value}
-mov ${name}, ebx\n
+mov [${name}], ebx\n
 `
 })
 
@@ -219,15 +219,19 @@ program = program.replace(/RITCHIE_ASM_ID/g, (str, index, original) => {
     asms = asms.slice(1)
     return xxx
 });
+// console.log(vars)
+// console.log(bss)
+// program = program.replace(new RegExp(vars.join('|'),'g'),(v, index)=>{
+//     console.log(v)
 
-program = program.replace(new RegExp(vars.join('|'),'g'),(v, index)=>{
-    // console.log(v, index)
-    if((program[index - 1].match(/[A-Za-z]|[0-9]/g) == program[index -1]) || (program[index + 1].match(/[A-Za-z]|[0-9]/g) == program[index+1])){
-        return v
-    }else {
-        return `[${v}]`
-    }
-})
+//     if((program[index - 1].match(/[A-Za-z]|[0-9]/g) == program[index -1]) || (program[index + 1].match(/[A-Za-z]|[0-9]/g) == program[index+1])){
+//         return v
+//     }else {
+//         return `[${v}]`
+//     }
+//     // return `[${v}]`
+//     // return v
+// })
 
 let datasection = ''
 if(program.includes('section .data')){
