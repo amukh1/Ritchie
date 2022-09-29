@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/Ritchie.svg)](https://www.npmjs.com/package/Ritchie)
+[![npm version](https://badge.fury.io/js/ritchie.svg)](https://www.npmjs.com/package/ritchie)
 
 # Ritchie
 
