@@ -126,7 +126,7 @@ You can contribute to the project by making a pull request on [GitHub](https://g
 
 ## Authors
 
-* **Amukh1** - [Github](https://github.com/amukh1)
+* **Amukh1** - [Github](https://github.com/amukh1) / amukh1#9613
 
 See also the list of [contributors](https://github.com/amukh1/Ritchie/contributors) who participated in this project.
 
