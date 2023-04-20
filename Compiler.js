@@ -169,7 +169,7 @@ let value = varName.split(' ')[4]
 // let data = varName.split(' ')[4]
 // return `${vn} ${bytes} ${data}`
 // return original
-bss.push(`${name} res${bytes} 0`)
+bss.push(`${name}: res${bytes} 0`)
 vars.push(name)
 // let value2 = (value.match(/"(.*?)"/g)[0] == value) ? value:value
 /*
