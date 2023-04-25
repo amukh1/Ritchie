@@ -8,6 +8,9 @@
 
 > Contact me for help, because I *will* respond. Discord: amukh1#9613
 
+## A small note
+I have already developed a sequel to the language - [Ritchie++](https://github.com/amukh1/Ritchie-Plus-Plus/wiki) - which is much more stable, check it out! 
+
 ## Prerequisites
 
 This project requires NodeJS (version 8 or later) and NPM.
